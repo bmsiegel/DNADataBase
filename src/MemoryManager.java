@@ -4,11 +4,28 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * File manager for use with HashTable takes given handles and returns sequences
+ * from file
+ * 
+ * @author Brady Siegel (bmsiegel@vt.edu)
+ * @version 2019-05-04
+ */
 public class MemoryManager {
+    /**
+     * Container for list of freeblocks
+     */
     private LinkedList<FreeBlock> freeBlocks;
+    /**
+     * File to manage
+     */
     private RandomAccessFile raf;
 
 
+    /**
+     * @param fileName
+     *            name of file to manage
+     */
     public MemoryManager(String fileName) {
         freeBlocks = new LinkedList<FreeBlock>();
         try {
@@ -24,6 +41,9 @@ public class MemoryManager {
     }
 
 
+    /**
+     * @return String list of freeblocks
+     */
     public String printFreeBlocks() {
         String result = "Free Block List:\n";
         if (freeBlocks.isEmpty()) {
@@ -41,6 +61,13 @@ public class MemoryManager {
     }
 
 
+    /**
+     * @param insert
+     *            Sequence to be inserted
+     * @param length
+     *            length of sequence
+     * @return array with Offset and Length
+     */
     public int[] insert(String insert, int length) {
         int[] insertInfo = new int[2];
         int byteLength = (length + 4 - 1) / 4;
@@ -76,11 +103,22 @@ public class MemoryManager {
     }
 
 
+    /**
+     * @param offset
+     *            offset of data
+     * @param length
+     *            length of data
+     * @return DNA Sequence
+     */
     public String get(int offset, int length) {
         return convertFromBytes(offset, length);
     }
 
 
+    /**
+     * @param query
+     *            offset and length of removal
+     */
     public void remove(int[] query) {
         FreeBlock insert = new FreeBlock((int)((query[0] + 4 - 1) / 4),
             query[1]);
@@ -118,6 +156,9 @@ public class MemoryManager {
     }
 
 
+    /**
+     * Fixes free block list
+     */
     private void fixFreeBlocks() {
         for (int c = 0; c < freeBlocks.size() - 1; c++) {
             if (freeBlocks.get(c).getOffset() + freeBlocks.get(c)
@@ -130,22 +171,32 @@ public class MemoryManager {
             }
         }
         try {
-            if (freeBlocks.size() >= 1 && freeBlocks.get(freeBlocks.size() - 1)
-                .getOffset() + freeBlocks.get(freeBlocks.size() - 1)
-                    .getByteLength() > raf.length()) {
-                long newFileLength = freeBlocks.get(freeBlocks.size() - 1)
-                    .getOffset();
-                freeBlocks.remove(freeBlocks.size() - 1);
-                raf.setLength(newFileLength);
+            for (int c = 0; c < freeBlocks.size(); c++)
+            {
+                if (freeBlocks.get(c)
+                    .getOffset() + freeBlocks.get(c)
+                        .getByteLength() == raf.length()) {
+                    long newFileLength = freeBlocks.get(c)
+                        .getOffset();
+                    freeBlocks.remove(c);
+                    raf.setLength(newFileLength);
+                    c--;
+                }
             }
         }
         catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
 
+    /**
+     * @param offset
+     *            offset of data in file
+     * @param length
+     *            length of data
+     * @return converted String from file
+     */
     private String convertFromBytes(int offset, int length) {
         int strLength = length;
         String result = "";
@@ -188,6 +239,11 @@ public class MemoryManager {
     }
 
 
+    /**
+     * @param str
+     *            string to be flipped
+     * @return reversed string
+     */
     private String reverse(String str) {
         String result = "";
         for (int c = str.length(); c >= 1; c--) {
@@ -197,6 +253,16 @@ public class MemoryManager {
     }
 
 
+    /**
+     * 
+     * A = 00, C = 01, G = 10, T = 11
+     * 
+     * @param str
+     *            String to be converted to bytes
+     * @param length
+     *            length of string
+     * @return byte array with converted data
+     */
     private byte[] convertToBytes(String str, int length) {
         int strLength = length;
         length = (length + 4 - 1) / 4;
@@ -228,7 +294,7 @@ public class MemoryManager {
         for (int c = 0; c < (length * 4) - strLength; c++) {
             converted[length - 1] <<= 2;
         }
-        byte byteArray[] = new byte[converted.length];
+        byte [] byteArray = new byte[converted.length];
         for (int c = 0; c < converted.length; c++) {
             byteArray[c] = (byte)(converted[c] & 0xFF);
         }

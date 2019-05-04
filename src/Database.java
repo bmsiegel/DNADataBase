@@ -1,25 +1,50 @@
-import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
-
+/**
+ * Database helper class for use with DNAHashTable and MemoryManager. Allows the
+ * HashTable to have access to the Memory Manager
+ * 
+ * @author Brady Siegel (bmsiegel@vt.edu)
+ * @version 2019-05-04
+ */
 public class Database {
+    /**
+     * Memory Manager to keep track of Sequenceids and DNA Sequence
+     */
     private MemoryManager memory;
+    /**
+     * Hash Table to hold handles (file offset, and length of data)
+     */
     private DNAHashTable d;
 
-    public Database(String fileName, int length) throws FileNotFoundException, UnsupportedEncodingException {
+
+    /**
+     * @param fileName
+     *            File that will hold the sequences
+     * @param length
+     *            Length of HashTable
+     */
+    public Database(String fileName, int length) {
         memory = new MemoryManager(fileName);
         d = new DNAHashTable(length);
     }
 
 
-    public void insertSequence(String ID, String seq, int length) {
-        int insertionState = checkInsertion(ID);
+    /**
+     * @param id
+     *            id of DNA Sequence
+     * @param seq
+     *            DNA Sequence
+     * @param length
+     *            Length of sequence
+     */
+    public void insertSequence(String id, String seq, int length) {
+        int insertionState = checkInsertion(id);
         if (insertionState != -1 && insertionState != -2) {
-            DNAEntry insert = new DNAEntry(memory.insert(ID, ID.length()),
+            DNAEntry insert = new DNAEntry(memory.insert(id, id.length()),
                 memory.insert(seq, length));
-            d.insert(insert, checkInsertion(ID));
+            d.insert(insert, checkInsertion(id));
         }
         else if (insertionState == -1) {
-            System.out.println("SequenceID " + ID + " exists");
+            System.out.println("SequenceID " + id + " exists");
         }
         else {
             System.out.println("Bucket full.Sequence " + seq
@@ -28,47 +53,64 @@ public class Database {
     }
 
 
-    public void removeSequence(String ID) {
-        DNAEntry dna = findID(ID);
+    /**
+     * @param id
+     *            Sequenceid
+     */
+    public void removeSequence(String id) {
+        DNAEntry dna = findid(id);
         if (dna != null) {
             d.remove(dna);
             String seq = memory.get(dna.getSeqOffset(), dna.getSeqLength());
-            memory.remove(dna.getID());
+            memory.remove(dna.getid());
             memory.remove(dna.getSeq());
-            System.out.println("Sequence Removed " + ID + ":\n" + seq);
+            System.out.println("Sequence Removed " + id + ":\n" + seq);
         }
         else {
-            System.out.println("SequenceID " + ID + " not found");
+            System.out.println("SequenceID " + id + " not found");
         }
     }
 
 
-    public void findSequence(String ID) {
-        DNAEntry dna = findID(ID);
+    /**
+     * @param id
+     *            Sequenceid
+     */
+    public void findSequence(String id) {
+        DNAEntry dna = findid(id);
         if (dna != null) {
             System.out.println("Sequence Found: " + memory.get(dna
                 .getSeqOffset(), dna.getSeqLength()));
         }
         else {
-            System.out.println("SequenceID " + ID + " not found");
+            System.out.println("SequenceID " + id + " not found");
         }
     }
 
 
+    /**
+     * Prints database to standard output
+     */
     public void printDB() {
         System.out.println("Sequence IDs:");
         for (int c = 0; c < d.getLength(); c++) {
             if (d.isOccupied(c)) {
-                System.out.println(memory.get(d.get(c).getIDOffset(), d.get(c)
-                    .getIDLength()) + ": hash slot [" + c + "]");
+                System.out.println(memory.get(d.get(c).getidOffset(), d.get(c)
+                    .getidLength()) + ": hash slot [" + c + "]");
             }
         }
         System.out.println(memory.printFreeBlocks());
     }
 
 
-    private int checkInsertion(String ID) {
-        long homePosition = d.sfold(ID, d.getLength());
+    /**
+     * @param id
+     *            Sequence id
+     * @return integer where the sequence handle can be stored, -1 if the id
+     *         already exists, or -2 when the bucket is full
+     */
+    private int checkInsertion(String id) {
+        long homePosition = d.sfold(id, d.getLength());
         int bucketNum = (int)(homePosition / 32);
         int maxIndex = 31 + bucketNum * 32;
         int minIndex = bucketNum * 32;
@@ -79,9 +121,9 @@ public class Database {
                 return hashIndex;
             }
             else {
-                String currentID = memory.get(d.get(hashIndex).getIDOffset(), d
-                    .get(hashIndex).getIDLength());
-                canInsert = !currentID.equals(ID);
+                String currentid = memory.get(d.get(hashIndex).getidOffset(), d
+                    .get(hashIndex).getidLength());
+                canInsert = !currentid.equals(id);
                 if (!canInsert) {
                     return -1;
                 }
@@ -97,13 +139,19 @@ public class Database {
     }
 
 
-    private DNAEntry findID(String ID) {
-        int index = (int)d.sfold(ID, d.getLength());
+    /**
+     * @param id
+     *            Sequenceid
+     * @return DNAEntry object that holds the location of the id and sequence,
+     *         or null if not found
+     */
+    private DNAEntry findid(String id) {
+        int index = (int)d.sfold(id, d.getLength());
         int bucketNum = index / 32;
         int maxIndex = 31 + bucketNum * 32;
         int minIndex = bucketNum * 32;
         for (int c = 0; c < d.getLength(); c++) {
-            String currentID = "";
+            String currentid = "";
             if (d.get(index) != null && d.get(index).isTombstone()) {
                 if (index == maxIndex) {
                     index = minIndex;
@@ -117,9 +165,9 @@ public class Database {
                 return null;
             }
             else {
-                currentID = memory.get(d.get(index).getIDOffset(), d.get(index)
-                    .getIDLength());
-                if (currentID.equals(ID)) {
+                currentid = memory.get(d.get(index).getidOffset(), d.get(index)
+                    .getidLength());
+                if (currentid.equals(id)) {
                     return d.get(index);
                 }
                 if (index == maxIndex) {

@@ -1,11 +1,23 @@
 import student.TestCase;
 
+/**
+ * Test Class for DNA Database 
+ *
+ * @author Brady Siegel (bmsiegel@vt.edu)
+ * @version 2019-05-04
+ */
 public class DatabaseTests extends TestCase {
-    DNAdbase d = new DNAdbase();
+    /**
+     * Driver class object
+     */
+    private DNAdbase d = new DNAdbase();
 
 
+    /**
+     * Simpler Test for Database
+     */
     public void testMain() {
-        String args[] = { "P4SampleInput.txt", "hash.bin", "64",
+        String [] args = { "P4SampleInput.txt", "hash.bin", "64",
             "biofile.bin" };
         d.main(args);
         String history = systemOut().getHistory();
@@ -46,6 +58,9 @@ public class DatabaseTests extends TestCase {
     }
 
 
+    /**
+     * Harder test for Database
+     */
     public void testHarder() {
         String[] args = { "Harder.txt", "b", "32", "biofile.bin" };
         d.main(args);
@@ -1296,45 +1311,54 @@ public class DatabaseTests extends TestCase {
             "Sequence Removed CTGA:\n" + 
             "CTGA\n" + 
             "Sequence IDs:\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 0, Size 64 bytes\n" + 
+            "Free Block List: none\n" + 
             "Sequence IDs:\n" + 
             "AAGGTTCCAA: hash slot [26]\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 6, Size 58 bytes\n" + 
+            "Free Block List: none\n" + 
             "SequenceID AAGG not found\n" + 
             "Sequence IDs:\n" + 
             "AAGGTTCCAA: hash slot [26]\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 6, Size 58 bytes\n" + 
+            "Free Block List: none\n" + 
             "Sequence Removed AAGGTTCCAA:\n" + 
             "AAAAAAAAAA\n" + 
             "Sequence IDs:\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 0, Size 64 bytes\n" + 
+            "Free Block List: none\n" + 
             "Sequence IDs:\n" + 
             "ACGTACGT: hash slot [26]\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 4, Size 60 bytes\n" + 
+            "Free Block List: none\n" + 
             "Sequence IDs:\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
-            "ACGTACGT: hash slot [26]\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 56, Size 8 bytes\n" + 
-            "Sequence IDs:\n" + 
-            "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTT: hash slot [8]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "Free Block List: none\n" + 
             "Sequence IDs:\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "ACGTACGT: hash slot [26]\n" + 
+            "Free Block List: none\n" + 
+            "Sequence IDs:\n" + 
+            "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTT: hash slot [8]\n" + 
             "ATGC: hash slot [24]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "Free Block List: none\n" + 
             "Sequence IDs:\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ATGC: hash slot [24]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
@@ -1342,7 +1366,10 @@ public class DatabaseTests extends TestCase {
             "Sequence IDs:\n" + 
             "CCCC: hash slot [3]\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTT: hash slot [8]\n" + 
             "TGATCA: hash slot [9]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ATGC: hash slot [24]\n" + 
@@ -1354,95 +1381,114 @@ public class DatabaseTests extends TestCase {
             "Sequence IDs:\n" + 
             "CCCC: hash slot [3]\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ATGC: hash slot [24]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 75, Size 4 bytes\n" + 
+            "Free Block List: none\n" + 
             "Sequence Removed CCCC:\n" + 
             "CGATGC\n" + 
             "Sequence IDs:\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ATGC: hash slot [24]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 2] Starting Byte Location: 75, Size 4 bytes\n" + 
             "Sequence Removed ATGC:\n" + 
             "AGTCGTC\n" + 
             "Sequence IDs:\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 64, Size 3 bytes\n" + 
             "[Block 2] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 3] Starting Byte Location: 75, Size 4 bytes\n" + 
             "SequenceID TGATCA not found\n" + 
             "Sequence IDs:\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 64, Size 3 bytes\n" + 
             "[Block 2] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 3] Starting Byte Location: 75, Size 4 bytes\n" + 
             "Sequence IDs:\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTT: hash slot [8]\n" + 
             "TGATCA: hash slot [9]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 2] Starting Byte Location: 75, Size 4 bytes\n" + 
             "Sequence Found: AGTG\n" + 
             "SequenceID AGTG not found\n" + 
             "Sequence IDs:\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTT: hash slot [8]\n" + 
             "TGATCA: hash slot [9]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 2] Starting Byte Location: 75, Size 4 bytes\n" + 
             "Sequence Removed TGATCA:\n" + 
             "AGTG\n" + 
             "Sequence IDs:\n" + 
             "TTTTTTTTTTTTTTTT: hash slot [7]\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 64, Size 3 bytes\n" + 
             "[Block 2] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 3] Starting Byte Location: 75, Size 4 bytes\n" + 
             "Sequence Removed TTTTTTTTTTTTTTTT:\n" + 
             "TTTTTTTTTTTTTTTT\n" + 
             "Sequence IDs:\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 56, Size 11 bytes\n" + 
             "[Block 2] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 3] Starting Byte Location: 75, Size 4 bytes\n" + 
             "Sequence IDs:\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
@@ -1450,10 +1496,13 @@ public class DatabaseTests extends TestCase {
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 60, Size 7 bytes\n" + 
             "[Block 2] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 3] Starting Byte Location: 75, Size 4 bytes\n" + 
             "SequenceID AGTCA not found\n" + 
             "Sequence IDs:\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "TTAC: hash slot [27]\n" + 
@@ -1461,1478 +1510,85 @@ public class DatabaseTests extends TestCase {
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 60, Size 7 bytes\n" + 
             "[Block 2] Starting Byte Location: 70, Size 3 bytes\n" + 
-            "[Block 3] Starting Byte Location: 75, Size 4 bytes\n" + 
             "Sequence Removed TTAC:\n" + 
             "TTAC\n" + 
             "Sequence Removed AGTC:\n" + 
             "AGTCTGACA\n" + 
             "Sequence IDs:\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTT"
+            + "TTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "ACGTACGT: hash slot [26]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 56, Size 11 bytes\n" + 
-            "[Block 2] Starting Byte Location: 70, Size 9 bytes\n" + 
             "Sequence Removed ACGTACGT:\n" + 
             "TGCATGCA\n" + 
             "Sequence IDs:\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]\n" + 
+            "TTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTT"
+            + "TTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTT"
+            + "TTTT: hash slot [8]\n" + 
             "GTCA: hash slot [11]\n" + 
             "Free Block List:\n" + 
             "[Block 1] Starting Byte Location: 0, Size 4 bytes\n" + 
             "[Block 2] Starting Byte Location: 56, Size 11 bytes\n" + 
-            "[Block 3] Starting Byte Location: 70, Size 9 bytes\n" + 
             "SequenceID ACGTACGT not found\n" + 
             "Sequence Removed GTCA:\n" + 
             "AGTCA\n" + 
-            "Sequence Removed TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT:\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT\n" + 
+            "Sequence Removed TTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTT"
+            + "TTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTT"
+            + "TTTTTTT:\n" + 
+            "TTTTTTTTTTTT"
+            + "TTTTTTTTTTT"
+            + "TTTTTTTTTT"
+            + "TTTTTTTTTTTT"
+            + "TTTTTTTTTTTT"
+            + "TTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTT"
+            + "TTTTTTTT\n" + 
             "Sequence IDs:\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 0, Size 79 bytes\n" + 
+            "Free Block List: none\n" + 
             "Sequence IDs:\n" + 
-            "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTAT: hash slot [17]\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 60, Size 19 bytes\n" + 
-            "Sequence Removed TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTAT:\n" + 
+            "TTTTTTTTTT"
+            + "TTTTTTTT"
+            + "TTTTTTTTT"
+            + "TTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTT"
+            + "TTAT: hash slot [17]\n" + 
+            "Free Block List: none\n" + 
+            "Sequence Removed TTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTTTTTTTTTTTTTTTTTTT"
+            + "TTTTTTTTTAT:\n" + 
             "TTTTATGTGTGTGTGTGTGTGTGTGAC\n" + 
             "Sequence IDs:\n" + 
-            "Free Block List:\n" + 
-            "[Block 1] Starting Byte Location: 0, Size 79 bytes\n" + 
+            "Free Block List: none\n" + 
             "SequenceID GATACA not found\n" + 
             "SequenceID GTGGTGG not found\n");
     }
-
-    
-//    Sequence IDs:
-//        AAAA: hash slot [18]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        AAAA: hash slot [18]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        AAAA: hash slot [18]
-//        GGGG: hash slot [21]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        AAAA: hash slot [18]
-//        GGGG: hash slot [21]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        GGGG: hash slot [21]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        TTTT: hash slot [27]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AAAA: hash slot [18]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List: none
-//        Sequence Removed AAAA:
-//        AAAA
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCC: hash slot [3]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 2 bytes
-//        Sequence Removed CCCC:
-//        CCCC
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        GGGG: hash slot [21]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 4 bytes
-//        Sequence Removed GGGG:
-//        GGGG
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTT: hash slot [27]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 6 bytes
-//        Sequence Removed TTTT:
-//        TTTT
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AAAC: hash slot [19]
-//        AAAG: hash slot [20]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 8 bytes
-//        Sequence Removed AAAC:
-//        AAAC
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AAAG: hash slot [20]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 10 bytes
-//        Sequence Removed AAAG:
-//        AAAG
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AAAT: hash slot [22]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 12 bytes
-//        Sequence Removed AAAT:
-//        AAAT
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCA: hash slot [4]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 14 bytes
-//        Sequence Removed CCCA:
-//        CCCA
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCG: hash slot [5]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 16 bytes
-//        Sequence Removed CCCG:
-//        CCCG
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        CCCT: hash slot [6]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 18 bytes
-//        Sequence Removed CCCT:
-//        CCCT
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        GGGA: hash slot [23]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 20 bytes
-//        Sequence Removed GGGA:
-//        GGGA
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        GGGC: hash slot [24]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 22 bytes
-//        Sequence Removed GGGC:
-//        GGGC
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        GGGT: hash slot [25]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 24 bytes
-//        Sequence Removed GGGT:
-//        GGGT
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AACC: hash slot [26]
-//        TTTA: hash slot [28]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 26 bytes
-//        Sequence Removed TTTA:
-//        TTTA
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AACC: hash slot [26]
-//        TTTC: hash slot [29]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 28 bytes
-//        Sequence Removed TTTC:
-//        TTTC
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AACC: hash slot [26]
-//        TTTG: hash slot [30]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 30 bytes
-//        Sequence Removed TTTG:
-//        TTTG
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AACC: hash slot [26]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 32 bytes
-//        Sequence Removed AACC:
-//        AACC
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        AAGG: hash slot [31]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 34 bytes
-//        Sequence Removed AAGG:
-//        AAGG
-//        Sequence IDs:
-//        AATT: hash slot [0]
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 36 bytes
-//        Sequence Removed AATT:
-//        AATT
-//        Sequence IDs:
-//        AACA: hash slot [1]
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 38 bytes
-//        Sequence Removed AACA:
-//        AACA
-//        Sequence IDs:
-//        AACG: hash slot [2]
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 40 bytes
-//        Sequence Removed AACG:
-//        AACG
-//        Sequence IDs:
-//        AACT: hash slot [7]
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 42 bytes
-//        Sequence Removed AACT:
-//        AACT
-//        Sequence IDs:
-//        AAGC: hash slot [8]
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 44 bytes
-//        Sequence Removed AAGC:
-//        AAGC
-//        Sequence IDs:
-//        AATC: hash slot [9]
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 46 bytes
-//        Sequence Removed AATC:
-//        AATC
-//        Sequence IDs:
-//        CCAA: hash slot [10]
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 48 bytes
-//        Sequence Removed CCAA:
-//        CCAA
-//        Sequence IDs:
-//        CCGG: hash slot [11]
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 50 bytes
-//        Sequence Removed CCGG:
-//        CCGG
-//        Sequence IDs:
-//        CCTT: hash slot [12]
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 52 bytes
-//        Sequence Removed CCTT:
-//        CCTT
-//        Sequence IDs:
-//        CCAC: hash slot [13]
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 54 bytes
-//        Sequence Removed CCAC:
-//        CCAC
-//        Sequence IDs:
-//        CCAG: hash slot [14]
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 56 bytes
-//        Sequence Removed CCAG:
-//        CCAG
-//        Sequence IDs:
-//        CCAT: hash slot [15]
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 58 bytes
-//        Sequence Removed CCAT:
-//        CCAT
-//        Sequence IDs:
-//        GTGA: hash slot [16]
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 60 bytes
-//        Sequence Removed GTGA:
-//        GTGA
-//        Sequence IDs:
-//        CTGA: hash slot [17]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 62 bytes
-//        Sequence Removed CTGA:
-//        CTGA
-//        Sequence IDs:
-//        Free Block List: none
-//        Sequence IDs:
-//        AAGGTTCCAA: hash slot [26]
-//        Free Block List: none
-//        SequenceID AAGG not found
-//        Sequence IDs:
-//        AAGGTTCCAA: hash slot [26]
-//        Free Block List: none
-//        Sequence Removed AAGGTTCCAA:
-//        AAAAAAAAAA
-//        Sequence IDs:
-//        Free Block List: none
-//        Sequence IDs:
-//        ACGTACGT: hash slot [26]
-//        Free Block List: none
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        ACGTACGT: hash slot [26]
-//        Free Block List: none
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        ACGTACGT: hash slot [26]
-//        Free Block List: none
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        ATGC: hash slot [24]
-//        ACGTACGT: hash slot [26]
-//        Free Block List: none
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ATGC: hash slot [24]
-//        ACGTACGT: hash slot [26]
-//        Free Block List: none
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        TGATCA: hash slot [9]
-//        GTCA: hash slot [11]
-//        ATGC: hash slot [24]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List: none
-//        Sequence Removed TGATCA:
-//        TGATCA
-//        Sequence IDs:
-//        CCCC: hash slot [3]
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ATGC: hash slot [24]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List: none
-//        Sequence Removed CCCC:
-//        CGATGC
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ATGC: hash slot [24]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 70, Size 3 bytes
-//        Sequence Removed ATGC:
-//        AGTCGTC
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 64, Size 3 bytes
-//        [Block 2] Starting Byte Location: 70, Size 3 bytes
-//        SequenceID TGATCA not found
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 64, Size 3 bytes
-//        [Block 2] Starting Byte Location: 70, Size 3 bytes
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        TGATCA: hash slot [9]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 70, Size 3 bytes
-//        Sequence Found: AGTG
-//        SequenceID AGTG not found
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        TGATCA: hash slot [9]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 70, Size 3 bytes
-//        Sequence Removed TGATCA:
-//        AGTG
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTT: hash slot [7]
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 64, Size 3 bytes
-//        [Block 2] Starting Byte Location: 70, Size 3 bytes
-//        Sequence Removed TTTTTTTTTTTTTTTT:
-//        TTTTTTTTTTTTTTTT
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 56, Size 11 bytes
-//        [Block 2] Starting Byte Location: 70, Size 3 bytes
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        AGTC: hash slot [30]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 60, Size 7 bytes
-//        [Block 2] Starting Byte Location: 70, Size 3 bytes
-//        SequenceID AGTCA not found
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        TTAC: hash slot [27]
-//        AGTC: hash slot [30]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 60, Size 7 bytes
-//        [Block 2] Starting Byte Location: 70, Size 3 bytes
-//        Sequence Removed TTAC:
-//        TTAC
-//        Sequence Removed AGTC:
-//        AGTCTGACA
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        ACGTACGT: hash slot [26]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 56, Size 11 bytes
-//        Sequence Removed ACGTACGT:
-//        TGCATGCA
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT: hash slot [8]
-//        GTCA: hash slot [11]
-//        Free Block List:
-//        [Block 1] Starting Byte Location: 0, Size 4 bytes
-//        [Block 2] Starting Byte Location: 56, Size 11 bytes
-//        SequenceID ACGTACGT not found
-//        Sequence Removed GTCA:
-//        AGTCA
-//        Sequence Removed TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT:
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
-//        Sequence IDs:
-//        Free Block List: none
-//        Sequence IDs:
-//        TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTAT: hash slot [17]
-//        Free Block List: none
-//        Sequence Removed TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTAT:
-//        TTTTATGTGTGTGTGTGTGTGTGTGAC
-//        Sequence IDs:
-//        Free Block List: none
-//        SequenceID GATACA not found
-//        SequenceID GTGGTGG not found
-
 }
