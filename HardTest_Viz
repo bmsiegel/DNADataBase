@@ -1,0 +1,52 @@
+insert AAAA, ACACA
+Sequence IDs:
+AAAA: hash slot [18]
+Free Block List: none
+<AAAA (1 Byte)><ACACA (2 Bytes)>
+
+insert CCCC, CACACACACA
+Sequence IDs:
+CCCC: hash slot [3]
+AAAA: hash slot [18]
+Free Block List: none
+<AAAA (1 Byte)><ACACA (2 Bytes)><CCCC (1 Byte)><CACACACACA (3 Bytes)>
+
+remove AAAA
+Sequence IDs:
+CCCC: hash slot [3]
+Free Block List: Location 0, size 3
+<Free Space (3 Bytes)><CCCC (1 Byte)><CACACACACA (3 Bytes)>
+
+insert CCGG 3
+AAA
+Sequence IDs:
+CCCC: hash slot [3]
+CCGG: hash slot [4]
+Free Block List: Location 2, Size 1
+<CCGG (1 Byte)><AAA (1 Byte)><Free Space (1 Byte)><CCCC (1 Byte)><CACACACACA (3 Bytes)>
+
+insert GTGT 3
+GGGG
+Sequence IDs:
+CCCC: hash slot [3]
+CCGG: hash slot [4]
+GTGT: hash slot [11]
+Free Block List: none
+<CCGG (1 Byte)><AAA (1 Byte)><GTGT (1 Byte)><CCCC (1 Byte)><CACACACACA (3 Bytes)><GGGG (1 Byte)>
+
+remove GTGT
+Sequence IDs:
+CCCC: hash slot [3]
+CCGG: hash slot [4]
+Free Block List: Location 2, size 1
+				 Location 7, size 1
+<CCGG (1 Byte)><AAA (1 Byte)><Free Space (1 Byte)><CCCC (1 Byte)><CACACACACA (3 Bytes)><Free Space (1 Byte)>
+
+remove CCCC
+Sequence IDs:
+CCGG: hash slot [4]
+Free Block List: Location 2, size 6
+<CCGG (1 Byte)><AAA (1 Byte)><Free Space (6 Bytes)>
+
+
+

@@ -1,0 +1,169 @@
+insert AAAA 4
+AAAA
+print
+insert AAAC 4
+AAAC
+print
+insert AAAG 4
+AAAG
+print
+insert AAAT 4
+AAAT
+print
+insert AACC 4
+AACC
+print
+insert AAGG 4
+AAGG
+print
+insert AATT 4
+AATT
+print
+insert ACCC 4
+ACCC
+print
+insert AGGG 4
+AGGG
+print
+insert ATTT 4
+ATTT
+print
+insert CCCC 4
+CCCC
+print
+insert CCCA 4
+CCCA
+print
+insert CCCG 4
+CCCG
+print
+insert CCCT 4
+CCCT
+print
+insert CCAA 4
+CCAA
+print
+insert CCGG 4
+CCGG
+print
+insert CCTT 4
+CCTT
+print
+insert CAAA 4
+CAAA
+print
+insert CGGG 4
+CGGG
+print
+insert CTTT 4
+CTTT
+print
+insert GGGG 4
+GGGG
+print
+insert GGGA 4
+GGGA
+print
+insert GGGC 4
+GGGC
+print
+insert GGGT 4
+GGGT
+print
+insert GGAA 4
+GGAA
+print
+insert GGCC 4
+GGCC
+print
+insert GGTT 4
+GGTT
+print
+insert GAAA 4
+GAAA
+print
+insert GCCC 4
+GCCC
+print
+insert GTTT 4
+GTTT
+print
+insert TTTT 4
+TTTT
+print
+insert ATTT 5
+ATTGT
+insert ACAC 6
+ACACAC
+print
+insert TGTG 7
+TGTGTGT
+print
+remove AAAA
+print
+remove AAAC
+print
+remove AAAG
+print
+remove AAAT
+print
+remove AACC
+print
+remove AAGG
+print
+remove AATT
+print
+remove ACCC
+print
+remove AGGG
+print
+remove ATTT
+print
+remove CCCC
+print
+remove CCCA
+print
+remove CCCG
+print
+remove CCCT
+print
+remove CCAA
+print
+remove CCGG
+print
+remove CCTT
+print
+remove CAAA
+print
+remove CGGG
+print
+remove CTTT
+print
+remove GGGG
+print
+remove GGGA
+print
+remove GGGC
+print
+remove GGGT
+print
+remove GGAA
+print
+remove GGCC
+print
+remove GGTT
+print
+remove GAAA
+print
+remove GCCC
+print
+remove GTTT
+print
+remove TTTT
+print
+remove ATTT
+print
+remove ACAC
+print
+remove TGTG
+print

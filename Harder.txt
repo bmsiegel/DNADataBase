@@ -1,0 +1,265 @@
+insert AAAA 4
+AAAA
+print
+insert CCCC 4
+CCCC
+print
+insert GGGG 4
+GGGG
+print
+insert TTTT 4
+TTTT
+print
+insert AAAC 4
+AAAC
+print
+insert AAAG 4
+AAAG
+print
+insert AAAT 4
+AAAT
+print
+insert CCCA 4
+CCCA
+print
+insert CCCG 4
+CCCG
+print
+insert CCCT 4
+CCCT
+print
+insert GGGA 4
+GGGA
+print
+insert GGGC 4
+GGGC
+print
+insert GGGT 4
+GGGT
+print
+insert TTTA 4
+TTTA
+print
+insert TTTC 4
+TTTC
+print
+insert TTTG 4
+TTTG
+print
+insert AACC 4
+AACC
+print
+insert AAGG 4
+AAGG
+print
+insert AATT 4
+AATT
+print
+insert AACA 4
+AACA
+print
+insert AACG 4
+AACG
+print
+insert AACT 4
+AACT
+print
+insert AAGC 4
+AAGC
+print
+insert AATC 4
+AATC
+print
+insert CCAA 4
+CCAA
+print
+insert CCGG 4
+CCGG
+print
+insert CCTT 4
+CCTT
+print
+insert CCAC 4
+CCAC
+print
+insert CCAG 4
+CCAG
+print
+insert CCAT 4
+CCAT
+print
+insert GTGA 4
+GTGA
+print
+insert CTGA 4
+CTGA
+print
+remove AAAA 4
+AAAA
+print
+remove CCCC 4
+CCCC
+print
+remove GGGG 4
+GGGG
+print
+remove TTTT 4
+TTTT
+print
+remove AAAC 4
+AAAC
+print
+remove AAAG 4
+AAAG
+print
+remove AAAT 4
+AAAT
+print
+remove CCCA 4
+CCCA
+print
+remove CCCG 4
+CCCG
+print
+remove CCCT 4
+CCCT
+print
+remove GGGA 4
+GGGA
+print
+remove GGGC 4
+GGGC
+print
+remove GGGT 4
+GGGT
+print
+remove TTTA 4
+TTTA
+print
+remove TTTC 4
+TTTC
+print
+remove TTTG 4
+TTTG
+print
+remove AACC 4
+AACC
+print
+remove AAGG 4
+AAGG
+print
+remove AATT 4
+AATT
+print
+remove AACA 4
+AACA
+print
+remove AACG 4
+AACG
+print
+remove AACT 4
+AACT
+print
+remove AAGC 4
+AAGC
+print
+remove AATC 4
+AATC
+print
+remove CCAA 4
+CCAA
+print
+remove CCGG 4
+CCGG
+print
+remove CCTT 4
+CCTT
+print
+remove CCAC 4
+CCAC
+print
+remove CCAG 4
+CCAG
+print
+remove CCAT 4
+CCAT
+print
+remove GTGA 4
+GTGA
+print
+remove CTGA 4
+CTGA
+print
+insert AAGGTTCCAA 10
+AAAAAAAAAA
+print
+remove AAGG
+print
+remove AAGGTTCCAA
+print
+insert ACGTACGT 8
+TGCATGCA
+print
+insert TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 104
+TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+print
+insert TTTTTTTTTTTTTTTT 16
+TTTTTTTTTTTTTTTT
+print
+insert ATGC 7
+AGTCGTC
+print
+insert GTCA 5
+AGTCA
+print
+insert CCCC 6
+CGATGC
+insert TTAC 4
+TTAC
+insert TGATCA 6
+TGATCA
+print
+remove TGATCA
+print
+remove CCCC
+print
+remove ATGC
+print
+remove TGATCA
+print
+insert TGATCA 4
+AGTG
+print
+search TGATCA
+remove AGTG
+print
+remove TGATCA
+print
+remove TTTTTTTTTTTTTTTT
+print
+insert AGTC 9
+AGTCTGACA
+print
+remove AGTCA
+print
+remove TTAC
+remove AGTC
+print
+remove ACGTACGT
+print
+remove ACGTACGT
+remove GTCA
+remove TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT
+print
+insert TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTAT 27
+TTTTATGTGTGTGTGTGTGTGTGTGAC
+print
+remove TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTAT
+print
+remove GATACA
+search GTGGTGG
+
+
+
+
+
