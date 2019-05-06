@@ -38,13 +38,11 @@ public class Database {
      */
     public void insertSequence(String id, String seq, int length) {
         int insertionState = checkInsertion(id);
-        if (checkForDupes(id))
-        {
-            System.out.println("SequenceID " + id + " exists");            
+        if (checkForDupes(id)) {
+            System.out.println("SequenceID " + id + " exists");
         }
-        else
-        {
-            if (insertionState != -1) {
+        else {
+            if (insertionState != -2) {
                 DNAEntry insert = new DNAEntry(memory.insert(id, id.length()),
                     memory.insert(seq, length));
                 d.insert(insert, checkInsertion(id));
@@ -106,15 +104,14 @@ public class Database {
         System.out.println(memory.printFreeBlocks());
     }
 
-    
+
     /**
      * 
      * @param id
      *            id to check for in hash table
      * @return true if duplicates exist, false if not
      */
-    private boolean checkForDupes(String id)
-    {
+    private boolean checkForDupes(String id) {
         int index = (int)d.sfold(id, d.getLength());
         int bucketNum = index / 32;
         int maxIndex = 31 + bucketNum * 32;
@@ -130,8 +127,7 @@ public class Database {
                 }
                 continue;
             }
-            else if (d.get(index) == null)
-            {
+            else if (d.get(index) == null) {
                 return false;
             }
             else {
@@ -151,11 +147,12 @@ public class Database {
         return false;
     }
 
+
     /**
      * @param id
      *            Sequence id
-     * @return integer where the sequence handle can be stored, -1 if the id
-     *         already exists, or -2 when the bucket is full
+     * @return integer where the sequence handle can be stored, -1 when the
+     *         bucket is full
      */
     private int checkInsertion(String id) {
         long homePosition = d.sfold(id, d.getLength());
@@ -163,18 +160,9 @@ public class Database {
         int maxIndex = 31 + bucketNum * 32;
         int minIndex = bucketNum * 32;
         int hashIndex = (int)homePosition;
-        boolean canInsert = true;
         for (int c = 0; c < 32; c++) {
             if (!d.isOccupied(hashIndex)) {
                 return hashIndex;
-            }
-            else {
-                String currentid = memory.get(d.get(hashIndex).getidOffset(), d
-                    .get(hashIndex).getidLength());
-                canInsert = !currentid.equals(id);
-                if (!canInsert) {
-                    return -1;
-                }
             }
             if (hashIndex == maxIndex) {
                 hashIndex = minIndex;
@@ -183,7 +171,7 @@ public class Database {
                 hashIndex++;
             }
         }
-        return -2;
+        return -1;
     }
 
 
