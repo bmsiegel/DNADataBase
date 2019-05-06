@@ -38,17 +38,21 @@ public class Database {
      */
     public void insertSequence(String id, String seq, int length) {
         int insertionState = checkInsertion(id);
-        if (insertionState != -1 && insertionState != -2) {
-            DNAEntry insert = new DNAEntry(memory.insert(id, id.length()),
-                memory.insert(seq, length));
-            d.insert(insert, checkInsertion(id));
+        if (checkForDupes(id))
+        {
+            System.out.println("SequenceID " + id + " exists");            
         }
-        else if (insertionState == -1) {
-            System.out.println("SequenceID " + id + " exists");
-        }
-        else {
-            System.out.println("Bucket full.Sequence " + seq
-                + " could not be inserted");
+        else
+        {
+            if (insertionState != -1) {
+                DNAEntry insert = new DNAEntry(memory.insert(id, id.length()),
+                    memory.insert(seq, length));
+                d.insert(insert, checkInsertion(id));
+            }
+            else {
+                System.out.println("Bucket full.Sequence " + seq
+                    + " could not be inserted");
+            }
         }
     }
 
@@ -102,6 +106,50 @@ public class Database {
         System.out.println(memory.printFreeBlocks());
     }
 
+    
+    /**
+     * 
+     * @param id
+     *            id to check for in hash table
+     * @return true if duplicates exist, false if not
+     */
+    private boolean checkForDupes(String id)
+    {
+        int index = (int)d.sfold(id, d.getLength());
+        int bucketNum = index / 32;
+        int maxIndex = 31 + bucketNum * 32;
+        int minIndex = bucketNum * 32;
+        for (int c = 0; c < d.getLength(); c++) {
+            String currentid = "";
+            if (d.get(index) != null && d.get(index).isTombstone()) {
+                if (index == maxIndex) {
+                    index = minIndex;
+                }
+                else {
+                    index++;
+                }
+                continue;
+            }
+            else if (d.get(index) == null)
+            {
+                return false;
+            }
+            else {
+                currentid = memory.get(d.get(index).getidOffset(), d.get(index)
+                    .getidLength());
+                if (currentid.equals(id)) {
+                    return true;
+                }
+                if (index == maxIndex) {
+                    index = minIndex;
+                }
+                else {
+                    index++;
+                }
+            }
+        }
+        return false;
+    }
 
     /**
      * @param id
